@@ -1,11 +1,11 @@
 #!/bin/bash
 
-VERSION=2.0.1
+VERSION=2.4.17
 
-docker build --build-arg VERSION=$VERSION -t gradiant/hbase-base:$VERSION hbase-base
-docker build --build-arg VERSION=$VERSION -t gradiant/hbase-master:$VERSION hbase-master
-docker build --build-arg VERSION=$VERSION -t gradiant/hbase-region:$VERSION hbase-region
+docker build --build-arg VERSION=$VERSION -t junit/hbase-base:$VERSION hbase-base
+docker build --build-arg VERSION=$VERSION -t junit/hbase-master:$VERSION hbase-master
+docker build --build-arg VERSION=$VERSION -t junit/hbase-region:$VERSION hbase-region
 
-docker tag gradiant/hbase-base:$VERSION gradiant/hbase-base:latest
-docker tag gradiant/hbase-master:$VERSION gradiant/hbase-master:latest
-docker tag gradiant/hbase-region:$VERSION gradiant/hbase-region:latest
+docker tag junit/hbase-base:$VERSION junit/hbase-base:latest
+docker tag junit/hbase-master:$VERSION junit/hbase-master:latest
+docker tag junit/hbase-region:$VERSION junit/hbase-region:latest
