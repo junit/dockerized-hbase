@@ -3,7 +3,7 @@ FROM openjdk:8u242-jre-slim
 LABEL maintainer="cgiraldo@gradiant.org"
 LABEL organization="gradiant.org"
 
-ARG VERSION=2.5.3
+ARG VERSION=2.5.5
 ENV HBASE_VERSION=$VERSION \
     HBASE_HOME=/opt/hbase
 
@@ -13,7 +13,9 @@ ENV HBASE_PREFIX=$HBASE_HOME \
     PATH=$PATH:$HBASE_HOME/bin \
     LD_LIBRARY_PATH=/lib/native
 
-RUN apt-get update && apt-get install -y bash perl curl zlib1g-dev libssl-dev libsnappy-dev libbz2-dev libzstd-dev && rm -rf /var/lib/apt/lists/* && \
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y bash perl curl zlib1g-dev libssl-dev libsnappy-dev libbz2-dev libzstd-dev krb5-user libpam-krb5 && rm -rf /var/lib/apt/lists/* && \
 curl -SL http://archive.apache.org/dist/hbase/$HBASE_VERSION/hbase-$HBASE_VERSION-bin.tar.gz | tar xvz -C /opt && \
 ln -s /opt/hbase-$HBASE_VERSION $HBASE_HOME && \
 ln -s /opt/hbase-$HBASE_VERSION/conf $HBASE_CONF_DIR && \
