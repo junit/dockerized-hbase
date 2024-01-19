@@ -3,7 +3,7 @@ FROM openjdk:8u242-jre-slim
 LABEL maintainer="cgiraldo@gradiant.org"
 LABEL organization="gradiant.org"
 
-ARG VERSION=2.5.5
+ARG VERSION=2.5.7
 ENV HBASE_VERSION=$VERSION \
     HBASE_HOME=/opt/hbase
 

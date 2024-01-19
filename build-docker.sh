@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=2.5.5
+VERSION=2.5.7
 
 docker build --build-arg VERSION=$VERSION -t junit/hbase-base:$VERSION hbase-base
 docker build --build-arg VERSION=$VERSION -t junit/hbase-master:$VERSION hbase-master

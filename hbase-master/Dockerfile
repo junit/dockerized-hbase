@@ -1,4 +1,4 @@
-ARG VERSION=2.5.5
+ARG VERSION=2.5.7
 FROM junit/hbase-base:$VERSION
 
 LABEL maintainer="cgiraldo@gradiant.org"
